@@ -32,7 +32,7 @@ function validateTShirtSize(size) {
 }
 
 function validateShoeSize(size) {
-  const num = parseInt(size)
+  const num = Number.parseInt(size, 10)
   return !isNaN(num) && num >= 34 && num <= 48
 }
 

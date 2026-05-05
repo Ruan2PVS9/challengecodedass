@@ -17,6 +17,7 @@ permissions:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    environment: teste
     steps:
       - uses: actions/checkout@v4
 
@@ -54,6 +55,7 @@ jobs:
   migrate:
     needs: build-and-push
     runs-on: ubuntu-latest
+    environment: teste
     if: ${{ github.event.inputs.run_migrations == 'true' }}
     steps:
       - uses: actions/checkout@v4
@@ -73,6 +75,7 @@ jobs:
   deploy:
     needs: build-and-push
     runs-on: ubuntu-latest
+    environment: teste
     steps:
       - uses: actions/checkout@v4
 
